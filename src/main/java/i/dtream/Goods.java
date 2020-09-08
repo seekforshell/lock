@@ -9,7 +9,7 @@ import java.util.concurrent.locks.Lock;
  * Version: 1.0
  */
 public class Goods {
-    private volatile static int goodNum = 100;
+    public static int goodNum = 100;
 
     public static List<GoodEntry> goods = new ArrayList<>(100);
 
@@ -19,6 +19,11 @@ public class Goods {
             this.id = id;
             this.name = name;
             this.desc = desc;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("good:%d-%s-%s", id, name, desc);
         }
 
         private int id;
@@ -33,8 +38,5 @@ public class Goods {
             GoodEntry entry = new GoodEntry(i, "apple" + i, "");
             goods.add(entry);
         }
-
-        lock.getCondition().signal();
-
     }
 }
