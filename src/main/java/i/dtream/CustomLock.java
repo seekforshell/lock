@@ -34,35 +34,26 @@ public class CustomLock implements Lock {
 
         @Override
         protected boolean tryRelease(int arg) {
-            setExclusiveOwnerThread(null);
-            setState(capacity);
-
-            return true;
-        }
-
-        @Override
-        protected boolean tryReleaseShared(int arg) {
             for (;;) {
                 int current = getState();
                 int next = current + arg;
-                if (next > capacity) // overflow
-                    throw new Error("Maximum permit count exceeded");
                 if (compareAndSetState(current, next))
                     return true;
             }
         }
 
         @Override
-        protected int tryAcquireShared(int arg) {
+        protected boolean tryAcquire(int arg) {
             for (;;) {
                 int state = getState();
                 if (hasQueuedPredecessors() || state < 1) {
-                    return -1;
+                    return false;
                 }
 
                 int remain = state - arg;
                 if (compareAndSetState(state, remain)) {
-                    return remain;
+                    setExclusiveOwnerThread(Thread.currentThread());
+                    return true;
                 }
             }
         }
@@ -84,12 +75,12 @@ public class CustomLock implements Lock {
 
     @Override
     public void lock() {
-        sync.acquireShared(1);
+        sync.acquire(1);
     }
 
     @Override
     public void lockInterruptibly() throws InterruptedException {
-        sync.acquireInterruptibly(1);
+
     }
 
     @Override
@@ -106,7 +97,7 @@ public class CustomLock implements Lock {
 
     @Override
     public void unlock() {
-        sync.releaseShared(1);
+        sync.release(1);
 
     }
 

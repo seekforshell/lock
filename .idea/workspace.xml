@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d81bdb18-f06f-4a90-b09a-bd9bf71c5d72" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/i/dtream/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/i/dtream/CustomLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/i/dtream/CustomLock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/i/dtream/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/i/dtream/Goods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/i/dtream/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/i/dtream/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/i/dtream/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/i/dtream/OrderTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,7 +94,7 @@
       <updated>1599462279259</updated>
       <workItem from="1599462283852" duration="7080000" />
       <workItem from="1599475415854" duration="13281000" />
-      <workItem from="1599552851250" duration="3421000" />
+      <workItem from="1599552851250" duration="6481000" />
     </task>
     <servers />
   </component>
@@ -113,5 +113,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/i/dtream/Order.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
